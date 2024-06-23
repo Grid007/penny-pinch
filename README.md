@@ -7,6 +7,7 @@ Welcome to PennyPinch, a financial personal expense tracker built with Expo Reac
 - **Frontend:** Expo React Native
 - **Backend:** Node.js, Express.js
 - **Database:** PostgreSQL
+- **Database Management:** pgAdmin 4
 
 ## Installation
 
@@ -37,9 +38,43 @@ Welcome to PennyPinch, a financial personal expense tracker built with Expo Reac
    npm install
    ```
 
-## Running the Application
+### PostgreSQL Database and pgAdmin 4
 
-### Client Side (Expo)
+#### PostgreSQL Installation
+
+1. **Download PostgreSQL:**
+   - Go to [PostgreSQL Downloads](https://www.postgresql.org/download/) and select the appropriate installer for your operating system.
+
+2. **Install PostgreSQL:**
+   - Run the installer and follow the installation wizard instructions.
+   - During installation, set a password for the default \`postgres\` user (superuser).
+
+#### pgAdmin 4 Installation
+
+1. **Download pgAdmin 4:**
+   - Visit the [pgAdmin 4 Download](https://www.pgadmin.org/download/) page.
+   - Select the installer for your operating system (Windows, macOS, or Linux).
+
+2. **Install pgAdmin 4:**
+   - Run the installer and follow the installation instructions provided.
+   - Launch pgAdmin 4 after installation completes.
+
+#### Configuring PostgreSQL
+
+1. **Connect pgAdmin 4 to PostgreSQL:**
+   - Open pgAdmin 4.
+   - Right-click on "Servers" and select "Create" > "Server..."
+   - Enter the following details:
+     - **Name:** Give your server a name (e.g., PostgreSQL).
+     - **Host name/address:** \`localhost\` (if PostgreSQL is installed locally).
+     - **Port:** \`5432\` (or the port PostgreSQL is configured to use).
+     - **Username:** \`postgres\` (or your configured superuser username).
+     - **Password:** (Enter the password you set during PostgreSQL installation).
+   - Click "Save" to connect to the PostgreSQL server.
+
+### Running the Application
+
+#### Client Side (Expo)
 
 1. **Start the Expo server:**
    ```bash
@@ -48,7 +83,7 @@ Welcome to PennyPinch, a financial personal expense tracker built with Expo Reac
    ```
    - This will start the Expo development server. You can then open your Expo app on your iOS or Android device, or use an emulator to preview the app.
 
-### Server Side (Node.js)
+#### Server Side (Node.js)
 
 1. **Start the Node.js server:**
    ```bash
@@ -61,11 +96,9 @@ Welcome to PennyPinch, a financial personal expense tracker built with Expo Reac
 - Make sure PostgreSQL is installed and properly configured on your machine or server before running the Node.js server. Adjust the database connection settings in \`server/index.js\` accordingly.
 
 ## Additional Information
-For more detailed instructions on using Expo and Node.js, refer to their respective documentation:
-
+For more detailed instructions on using Expo, Node.js, PostgreSQL, and pgAdmin 4, refer to their respective documentation:
 - [Expo Documentation](https://docs.expo.dev/)
 - [Node.js Documentation](https://nodejs.org/en/docs/)
-
----
-
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
+- [pgAdmin Documentation](https://www.pgadmin.org/docs/)
 
