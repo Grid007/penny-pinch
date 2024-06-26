@@ -43,7 +43,7 @@ export default function AddMoney({ navigation }) {
             addMoney: true,
           }),
         };
-        const response = await fetch('http://localhost:3001/api/transaction', addMoney);
+        const response = await fetch('https://penny-pinch.onrender.com/api/transaction', addMoney);
         if (response.ok) {
           const newBalance = parseFloat(budget) + parseFloat(inputAmount);
           setCheckIsShowing(true);

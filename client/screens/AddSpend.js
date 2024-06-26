@@ -46,7 +46,7 @@ export default function AddSpend({ navigation }) {
             spending: true,
           }),
         };
-        await fetch('http://localhost:3001/api/transaction', spendData);
+        await fetch('https://penny-pinch.onrender.com/api/transaction', spendData);
         setCheckIsShowing(true);
         setTimeout(function () {
           navigation.navigate('Home');

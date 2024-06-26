@@ -25,7 +25,7 @@ export default function Home({ navigation }) {
 
 const fetchData = async () => {
   try {
-    const res = await fetch(`http://localhost:3001/api/transaction`, {
+    const res = await fetch(`https://penny-pinch.onrender.com/api/transaction`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -130,7 +130,7 @@ const sortDate = (data) => {
           text: 'Yes',
           onPress: async () => {
             try {
-              await fetch(`http://localhost:3001/transaction/${targetItem.id}`, deleteRequest);
+              await fetch(`https://penny-pinch.onrender.com/transaction/${targetItem.id}`, deleteRequest);
               setInitialLoading((prev) => prev.filter((i) => i.id !== targetItem.id));
               setSum((prevSum) => prevSum - targetItem.amount);
               fetchData();

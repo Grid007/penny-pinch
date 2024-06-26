@@ -15,7 +15,7 @@ export const TransactionProvider = ({ children }) => {
     try {
       console.log(`Attempting to delete transaction with id: ${id}`);
 
-      const response = await fetch(`http://localhost:3001/api/transaction/${id}`, {
+      const response = await fetch(`https://penny-pinch.onrender.com/api/transaction/${id}`, {
         method: 'DELETE',
         headers: {
           Accept: 'application/json',

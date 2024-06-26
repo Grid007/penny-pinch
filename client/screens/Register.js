@@ -9,7 +9,7 @@ export default function Register({ navigation }) {
 
   const handleRegister = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/register', {
+      const response = await fetch('https://penny-pinch.onrender.com/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
