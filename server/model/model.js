@@ -1,5 +1,8 @@
-const { Sequelize, DataTypes } = require('sequelize');
 require('dotenv').config();
+const { Sequelize, DataTypes } = require('sequelize');
+
+// Log the URL to check if it's loaded correctly
+console.log('POSTGRES_URL:', process.env.POSTGRES_URL);
 
 // Set up the PostgreSQL connection using environment variables
 const sequelize = new Sequelize(process.env.POSTGRES_URL, {
