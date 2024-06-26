@@ -1,10 +1,9 @@
 const { Sequelize, DataTypes } = require('sequelize');
+require('dotenv').config();
 
-// Set up the PostgreSQL connection
-const sequelize = new Sequelize('finance-tracker', 'postgres', 'admin', {
-  host: 'localhost',
+// Set up the PostgreSQL connection using environment variables
+const sequelize = new Sequelize(process.env.POSTGRES_URL, {
   dialect: 'postgres',
-  port: 5432, // Default PostgreSQL port
   logging: false, // Disable logging; default: console.log
 });
 
@@ -72,7 +71,7 @@ const Transaction = sequelize.define('Transaction', {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: 'users', // References the User model
+      model: 'users',
       key: 'id'
     }
   },
@@ -82,13 +81,12 @@ const Transaction = sequelize.define('Transaction', {
 });
 
 // Define associations
-User.hasMany(Transaction, { foreignKey: 'userId' }); // One-to-many relationship: User can have many transactions
-Transaction.belongsTo(User, { foreignKey: 'userId' }); // Transaction belongs to a single user
+User.hasMany(Transaction, { foreignKey: 'userId' });
+Transaction.belongsTo(User, { foreignKey: 'userId' });
 
 // Connect to the database and create the tables if they don't exist
 async function syncDatabase() {
   try {
-    // Sync all defined models to the database
     await sequelize.sync();
     console.log('Database & tables synced!');
   } catch (error) {
@@ -96,7 +94,6 @@ async function syncDatabase() {
   }
 }
 
-// Call the syncDatabase function to initiate synchronization
 syncDatabase();
 
 module.exports = { Transaction, User, sequelize };

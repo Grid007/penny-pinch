@@ -1,0 +1,11 @@
+{
+    "builds": [
+        {
+            "src": "index.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "env": {
+       "POSTGRES_URL":"postgres://default:L6SmNjtAx0lB@ep-round-band-a4swqnp4-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+    }
+}
